@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/login.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="/pictures/logo.png" type="image/x-icon">
+    <title>Login</title>
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a href="/" class="logo">
+                <img src="/pictures/logo.png" width="130px" alt="logo">
+            </a>
+
+            <nav class="navbar">
+                <a href="/">HOME</a>
+                <a href="/loja">SHOP ALL</a>
+                <a href="/sac">SAC</a>
+                <a href="/sobre">SOBRE</a>
+            </nav>
+
+            <div class="icons">
+                <a href ="/login">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABSUlEQVR4nN2UPU4DMRCFP4KSBgoOQc3CJRAdUYCEW1DwU1MCSRckLoByJTYEuAK/BT9iF430VlotNrYp86QnWfab8XhmPDDv6AADYALkwJuYa68vzb+wA9wDZYB3QC/F8SIwcjgqgKlYOM6HQCvmApfzHFiraTJd1NRdxKSlafQth01knpd0fc47yqcreh9cr3jwFX7gKeI08QLjnks88YgLT4rWPSkyXqdEU+osazi//UPvTOtLoN+LQJvWab5+4TXiU5WRfE5NUZnIm9giPwJX6rBVYEm09b7OnmKL3K8J3oFjYJkwTHMim8p+N/TRxqTjUrYzoO0T9ST6BDYTnG8BX7LdDomHEprBaWBCLgAHwIdszmKiaWkq1jviENgAVkRbH+ms0p3HjusKXeUz1JKzmLT40NbgsrazaO0zGm1te9Yt3oLOB34ACqrfyi5MYE4AAAAASUVORK5CYII=" alt="user-male-circle--v1">
+                </a>
+                <!--Icone de pesquisa que inicialmente é "fechado"-->
+                <a href="#" id="search-box">
+                    <img width="30" height="30" src="https://img.icons8.com/ios/30/search--v1.png" alt="search--v1" />
+                </a>
+                <!--Icone de pesquisa abrindo...-->
+
+                <div id="search-container" style="display: none;">
+                    <input type="text" id="search-input" placeholder="Digite sua busca..." />
+                    <button id="search-btn">Buscar</button>
+                </div>
+
+
+                <a href="#" id="open-cart">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/shopping-cart--v1.png"
+                        alt="shopping-cart--v1" />
+                </a>
+            </div>
+        </section>
+    </header>
+
+    <div class="wrapper">
+        <form action="">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Nome do usuário" required>
+                <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAg1JREFUSEuNlb9LllEUxz+HaLbQhkYJpxZBV2l0MRAKamlpa3Hw19gSBEEYIvQnREukhYv/QIFEQzgpjoqgDhYEQR59nuc+z3PvPee+eof35T33/LjnfM/3+wr5EUDrDwhfxqc2xJepf37jx0fWuGZvjpOWH1TdOMc8/QHwGrgfHv8LZRn4lgQ7HQ8u0AQ8FfigglRTi845MAt8rcZVXbbXyYhK7YeAW8A+cNviUSc9VLgH8rfGLD4hcaGDDsJZkM8mOE00jcpWaSmSAn03XZMLwNsrcJoH3hnwg8EWSLM9BL44hWOvGWAzLpDg0QOSbm/tJAyh7AmMWABr/yNgDPgdUyOn0lU8eCLwseVen0jOQR8hrLvrExyLIGcLMaXCG7TmwX+EHVSWQL832+UQrd0iww1nb6/jY9Qj6cCRFTM3h6V+UqtSwZJmELijsAgyATqOMNyNoql+AvwEtoEV4Lh9lBU7MxZ5Brp2ud9DrqTabk6B58BG13kESz6NuUtpWB3Yvhlpp0WPgU8pJ6pffcAowi7KjVIBIzep4Q8qo6D9uLJu3yO8yHXLZ2kR9Zegrzo8MiYfAHfzPYipbxgbaU5g+w9gsp2KZPj+Q7g5iJmxsvoyw1mzHM3JmRweUWq/pCqGySGv0HRgkAtb4ShApEXJv1hs7zNWeaLjEzr9OywVGER0p+/06dfRIt8HLgCCts4gGUqRmwAAAABJRU5ErkJggg==" />
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Senha" required>
+                <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAexJREFUSEuNlb9qVUEQxn+TV5AUEhDEIml9BZuku434DgGrkCakiWhhsLCK72Bld0Ehr2BhYycJhFTiG4SN5+yc3Zmd3cvd4rLMmZ2/3/ddoT0CJDXOdzV07EJS15EPTF/ybxLqg2KqyUIl2xlygs6pBc+318Ax8Epdr0GuIH1zTweNbAwPfBI4dZOq2S/+9/9uUy/DDvTRG+Cr3t+DfNExvgU51/sh8MOO2s7V7EDnXj2n20/gJXACfG4qPRf4kOA7cFTxYNGwLNkHrXGEBxI7wC7wt3zIMZ4C98A/kCdzNz52ieoLs9DUXgVkQW7TRcoIRBpQlHGYHVgIFMjOcUOCGk3zTvGTh7sJN0aRZ9KcquFK0rE4sLScLLTVxyvgI3CwZA4k7uPyN3AKrO1K4+zgDtgLMfxuAiy0iD8gL6zWxNYUDnY6QUI2q4Tba0+L+oAJMuANBkV54dqjI5paQ4IOvEcjUtBZKi2mqqYz3sKItsmS04olXeRBJVdp1NczoJxxsniIYqelbyw47KOMvGG106JSQlPiQGB6Xrl0w+ppYOYfsi65U+L2LeWYPanQD7cknnV41Ue/d7wBnrsEnUArkEtI+y5i6CAIyC/gDGRdUTShsT1tf07kvdiNCG1I5xOEmjpV9yXE7szv7xHKqdgeyXv/1QAAAABJRU5ErkJggg==" />
+            </div>
+
+            <div class="remember-forgot">
+                <label> <input type="checkbox"> Lembrar de mim </label>
+                <a href="#">
+                    Esqueceu a senha?
+                </a>
+            </div>
+
+            <button type="button"class="btn">Login</button>
+
+            <div class="register-link">
+                <p>Não possui uma conta? <a href="/formulario">Registra-se</a></p>
+            </div>
+
+        </form>
+    </div>
+        <script src="./scripts/login.js"></script>
+        
+        <script src="./scripts/procura.js"></script>
+    
+</body>
+
+</html>

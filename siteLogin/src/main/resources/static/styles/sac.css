@@ -1,0 +1,41 @@
+.main-page-title {
+    font-size: 32px; /* Tamanho da fonte */
+    color: #333333; /* Cor do texto */
+    text-align: center; /* Alinha o texto no centro */
+    font-weight: bold; /* Deixa a fonte em negrito */
+    margin-top: 20px; /* Espaço acima do h1 */
+    margin-bottom: 20px; /* Espaço abaixo do h1 */
+}
+.content-sac {
+    padding-top: 12rem; 
+}
+
+.content-sac-p{
+    width: 80%; /* Define a largura do conteúdo */
+    max-width: 800px; /* Define um limite para evitar que fique muito largo */
+    margin: 0 auto; /* Centraliza o contêiner na página */
+    text-align: left; /* Mantém o texto alinhado à esquerda */
+    font-size: 1.6rem;
+   
+}
+
+
+.content-sac-p p{
+    margin-bottom: 20px;
+}
+
+span{
+    display: inline-block;
+    line-height: 1.6;
+   
+}
+
+li{
+   
+    line-height: 1.6;
+}
+
+h3{
+    font-size: 20px;
+    margin-bottom: 15px;
+}

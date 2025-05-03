@@ -1,0 +1,298 @@
+:root{
+    --main-color: rgba(255, 255, 255);
+    --border: 0.1rem solid rgba(0, 0, 0, 0.3);
+    --bg: rgba(255, 255, 255);
+    --black: #010103;
+    font-size: 10px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0; 
+    border: none;
+    text-decoration: none;
+    text-transform: none;
+    transition: 0.2s linear;
+    font-family: "Roboto", sans-serif;
+}   
+
+body{
+    background-color: var(--main-color);
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-bottom: var(--border);
+    background-color: white;
+    height: 10rem; 
+}
+/* O conteúdo da seção de SAC deve começar abaixo do header */
+
+
+section{
+    padding: 1.5rem 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem; /* Corrigido */
+}
+
+
+.navbar a{
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #000000;
+}
+
+.navbar a:hover{
+    color: #dbd5d5;
+    border-bottom: 0.1rem solid #000000;
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.icons img{
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.icons img:hover{
+    width: 40px;
+    height: 40px;
+}   
+
+.add-cart{
+    background: #000000;
+    color: #ffffff;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+    transition: 0.2s;
+}
+.btn{
+    color: white;
+    background-color: #000000;
+    padding: 1rem 3rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.05rem;
+}
+
+.btn:hover {
+    letter-spacing: 0.1rem;
+    background-color: #444; /* Melhorar o feedback visual ao passar o mouse */
+}
+
+.home-container{
+    background-position: center;
+    background-size: cover;
+}
+
+.home-container section{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/*esse content altera o texto embaixo dos titulos */
+.content{
+    max-width: 20rem;
+}
+
+/* esse daqui altera os titulos */
+.content h3{
+    color: #000000;
+    font-size: 2.9rem;
+}
+
+.content p{
+    color: #000000;
+    font-size: 1.9rem;
+    font-weight: 100;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.title{
+    font-size: 4rem;
+    color: var(--black);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    background-color: #FFFAFE;
+    gap: 1.5rem;
+}
+
+.about .row .content{
+    padding: 2rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.menu .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 1.5rem;
+}
+
+.menu .box-container .box{
+    text-align: center;
+    border: var(--border);
+    padding: 5rem;
+    cursor: pointer;
+    transition: 0.3s; /* Adicionando transição suave */
+}
+
+.menu .box-container .box img{
+    height: 20rem;
+}
+
+.home-container .container-image-model{
+    display: flex;
+    align-items: center; 
+    padding: 50px;
+}
+
+.menu .box-container .box h3{
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.menu .box-container .box .price{
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+    color: #5E686D;
+}
+.menu .box-container .box span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.menu .box-container .box:hover{
+    background-color: #000000;
+    color: white; /*  texto visível */
+}
+
+.menu .box-container .box:hover>*{
+    color: white;
+}
+
+.review .box-container{
+    display: grid;
+}
+
+.review .box-container .box{
+    border: var(--border);
+    align-items: center;
+    padding: 3rem 2rem;
+}
+
+.review .box-container .box p{
+    font-size: 1.5rem;
+    color: gray;
+    padding: 2rem 0;
+    line-height: 1.8;
+    font-weight: lighter;
+}
+
+.review .box-container .box .user{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+}
+
+.address{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.review .box-container .box h3{
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.footer{
+    text-align: center;
+}
+
+.footer .share{
+    padding: 1rem 0;
+}
+
+.footer .share img{
+    margin: 0.3rem;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+.footer .share img:hover{
+    background-color: gray;
+}
+
+/* botao de procura */
+/* Estilo da barra de pesquisa */
+#search-container {
+    display: none;
+    position: absolute;
+    top: 50px; /* Ajuste a posição conforme necessário */
+    right: 20px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#search-input {
+    padding: 5px;
+    width: 200px; /* Ajuste o tamanho conforme necessário */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-btn {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    background-color: #45a049;
+}
+
+
