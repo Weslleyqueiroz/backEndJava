@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Caminhos CSS corrigidos -->
-    <link rel="stylesheet" th:href="@{/styles/main.css}">
-    <link rel="stylesheet" th:href="@{/styles/loja.css}">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/loja.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <!-- Ícone corrigido -->
-    <link rel="icon" th:href="@{/pictures/logo.png}" type="image/x-icon">
+    <link rel="icon" href="/pictures/logo.png" type="image/x-icon">
     <title>HOME</title>
 </head>
 
@@ -21,30 +19,31 @@
     <header class="header">
         <section>
             <a href="/" class="logo">
-                <!-- Imagem corrigida -->
-                <img th:src="@{/pictures/logo.png}" width="130px" alt="logo">
+                <img src="./pictures/logo.png" width="130px" alt="logo">
             </a>
 
             <nav class="navbar">
-                <a th:href="@{/}">HOME</a>
-                <a th:href="@{/loja}">SHOP ALL</a>
-                <a th:href="@{/sac}">SAC</a>
-                <a th:href="@{/sobre}">SOBRE</a>
+                <a href="/">HOME</a>
+                <a href="/loja">SHOP ALL</a>
+                <a href="/sac">SAC</a>
+                <a href="/sobre">SOBRE</a>
             </nav>
 
             <div class="icons">
-                <a th:href="@{/login}">
+                <a href ="/login">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABSUlEQVR4nN2UPU4DMRCFP4KSBgoOQc3CJRAdUYCEW1DwU1MCSRckLoByJTYEuAK/BT9iF430VlotNrYp86QnWfab8XhmPDDv6AADYALkwJuYa68vzb+wA9wDZYB3QC/F8SIwcjgqgKlYOM6HQCvmApfzHFiraTJd1NRdxKSlafQth01knpd0fc47yqcreh9cr3jwFX7gKeI08QLjnks88YgLT4rWPSkyXqdEU+osazi//UPvTOtLoN+LQJvWab5+4TXiU5WRfE5NUZnIm9giPwJX6rBVYEm09b7OnmKL3K8J3oFjYJkwTHMim8p+N/TRxqTjUrYzoO0T9ST6BDYTnG8BX7LdDomHEprBaWBCLgAHwIdszmKiaWkq1jviENgAVkRbH+ms0p3HjusKXeUz1JKzmLT40NbgsrazaO0zGm1te9Yt3oLOB34ACqrfyi5MYE4AAAAASUVORK5CYII=" alt="user-male-circle--v1">
                 </a>
                 <!--Icone de pesquisa que inicialmente é "fechado"-->
                 <a href="#" id="search-box">
                     <img width="30" height="30" src="https://img.icons8.com/ios/30/search--v1.png" alt="search--v1" />
                 </a>
+                <!--Icone de pesquisa abrindo...-->
 
                 <div id="search-container" style="display: none;">
                     <input type="text" id="search-input" placeholder="Digite sua busca..." />
                     <button id="search-btn">Buscar</button>
                 </div>
+
 
                 <a href="#" id="open-cart">
                     <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/shopping-cart--v1.png"
@@ -57,27 +56,30 @@
     <div class="home-container">
         <section id="home">
             <div class="container-image-model">
-                <!-- Imagem corrigida -->
-                <img th:src="@{/pictures/modelo/WhatsApp Image 2025-03-19 at 20.12.41.jpeg}" width="798px" alt="">
+                <img src="./pictures/modelo/WhatsApp Image 2025-03-19 at 20.12.41.jpeg" width="798px" alt="">
             </div>
             <div class="content">
                 <h3>AS MELHORES ROUPAS STREETWEAR DO BRASIL</h3>
+
                 <p>Aqui é onde estilo encontra história.
                     A Starboys nasceu entre amigos, com o sonho de levar identidade e atitude pra
                     cada peça. Mais que uma marca, somos um movimento feito de verdade, coragem e conexão.
                     Sinta-se em casa.
                     Você faz parte disso.</p>
+
                 <a href="#" class="btn">COMPRE AGORA</a>
+
             </div>
+
         </section>
+
     </div>
 
     <section class="about" id="about">
         <h2 class="title">SOBRE <span>NÓS</span></h2>
         <div class="row">
             <div class="container-image">
-                <!-- Imagem corrigida -->
-                <img th:src="@{/pictures/image.png}" width="850px" alt="sobre-nos">
+                <img src="./pictures/image.png" width="850px" alt="sobre-nos">
             </div>
             <div class="content">
                 <h3>O QUE FAZ SERMOS ESPECIAL?</h3>
@@ -97,43 +99,42 @@
         <div class="box-container">
             <!-- PRODUTOS -->
             <div class="box">
-                <!-- Imagem corrigida -->
-                <img th:src="@{/pictures/camisas/camisaCarrinho5.png}" alt="item-1" class="product-img">
+                <img src="./pictures/camisas/camisaCarrinho5.png" alt="item-1" class="product-img">
                 <h3 class="product-title">Camisa Streewear Caveiras</h3>
                 <div class="price">R$180,00 <span>R$200,00</span></div>
                 <a href="#" class="add-cart">Adicione ao carrinho</a>
             </div>
             <!-- PRODUTOS -->
             <div class="box">
-                <img th:src="@{/pictures/camisas/camisaCarrinho2.png}" alt="item-2" class="product-img">
+                <img src="./pictures/camisas/camisaCarrinho2.png" alt="item-2" class="product-img">
                 <h3 class="product-title">Camisa Streewear</h3>
                 <div class="price">R$100,00 <span>R$200,00</span></div>
                 <a href="#" class="add-cart">Adicione ao carrinho</a>
             </div>
             <!-- PRODUTOS -->
             <div class="box">
-                <img th:src="@{/pictures/camisas/camisaCarrinho3.png}" alt="item-3" class="product-img">
+                <img src="./pictures/camisas/camisaCarrinho3.png" alt="item-3" class="product-img">
                 <h3 class="product-title">Camisa Gengar</h3>
                 <div class="price">R$90,00 <span>R$100,00</span></div>
                 <a href="#" class="add-cart">Adicione ao carrinho</a>
             </div>
             <!-- PRODUTOS -->
             <div class="box">
-                <img th:src="@{/pictures/camisas/camisaCarrinho4.png}" alt="item-4" class="product-img">
+                <img src="./pictures/camisas/camisaCarrinho4.png" alt="item-4" class="product-img">
                 <h3 class="product-title">Camisa oversized</h3>
                 <div class="price">R$50,00 <span>R$80,00</span></div>
                 <a href="#" class="add-cart">Adicione ao carrinho</a>
             </div>
             <!-- PRODUTOS -->
             <div class="box">
-                <img th:src="@{/pictures/camisas/camisaCarrinho6.png}" alt="item-5" class="product-img">
+                <img src="./pictures/camisas/camisaCarrinho6.png" alt="item-5" class="product-img">
                 <h3 class="product-title">Camisa Streewear SZA</h3>
                 <div class="price">R$50,00 <span>R$100,00</span></div>
                 <a href="#" class="add-cart">Adicione ao carrinho</a>
             </div>
             <!-- PRODUTOS -->
             <div class="box">
-                <img th:src="@{/pictures/camisas/camisaCarrinho7.png}" alt="item-6" class="product-img">
+                <img src="./pictures/camisas/camisaCarrinho7.png" alt="item-6" class="product-img">
                 <h3 class="product-title">LOF1</h3>
                 <div class="price">R$100,00 <span>R$200,00</span></div>
                 <a href="#" class="add-cart">Adicione ao carrinho</a>
@@ -146,22 +147,65 @@
 
         <div class="box-container">
             <div class="box">
-                <!-- Imagens corrigidas -->
-                <img th:src="@{/pictures/quote-img.png}" alt="comentario">
+                <img src="./pictures/quote-img.png" alt="comentario">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae est nulla eum amet fuga,
                     similique reprehenderit itaque ab. Ea ex cum, impedit nostrum reprehenderit eos recusandae dolorem
                     odit consequatur reiciendis.</p>
-                <img th:src="@{/pictures/veigh1.jpg}" alt="foto-cliente" class="user">
+                <img src="./pictures/veigh 1.jpg" alt="foto-cliente" class="user">
                 <h3>Thiago Veigh</h3>
                 <div class="stars">
-                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png" alt="star--v1" />
-                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png" alt="star--v1" />
-                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png" alt="star--v1" />
-                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png" alt="star--v1" />
-                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star-half-empty.png" alt="star-half-empty" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star-half-empty.png"
+                        alt="star-half-empty" />
                 </div>
             </div>
-            <!-- Outros boxes de review com correções similares -->
+            <div class="box">
+                <img src="./pictures/quote-img.png" alt="comentario">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae est nulla eum amet fuga,
+                    similique reprehenderit itaque ab. Ea ex cum, impedit nostrum reprehenderit eos recusandae dolorem
+                    odit consequatur reiciendis.</p>
+                <img src="./pictures/veigh 1.jpg" alt="foto-cliente" class="user">
+                <h3>Thiago Veigh</h3>
+                <div class="stars">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star-half-empty.png"
+                        alt="star-half-empty" />
+                </div>
+            </div>
+            <div class="box">
+                <img src="./pictures/quote-img.png" alt="comentario">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae est nulla eum amet fuga,
+                    similique reprehenderit itaque ab. Ea ex cum, impedit nostrum reprehenderit eos recusandae dolorem
+                    odit consequatur reiciendis.</p>
+                <img src="./pictures/veigh 1.jpg" alt="foto-cliente" class="user">
+                <h3>Thiago Veigh</h3>
+                <div class="stars">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star-half-empty.png"
+                        alt="star-half-empty" />
+                </div>
+            </div>
         </div>
     </section>
 
@@ -178,22 +222,27 @@
             <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/instagram-new--v1.png"
                 alt="instagram-new--v1" />
 
+
             <!-- CARRINHO DE COMPRAS -->
             <div class="cart">
                 <h2 class="cart-title">CARRINHO DE COMPRA</h2>
-                <div class="cart-content"></div>
+                <div class="cart-content">
+
+                </div>
+
                 <div class="total">
                     <div class="total-title">Total</div>
                     <div class="total-price">R$200,00</div>
                 </div>
+                <!--botao de comprar-->
                 <button type="button" class="btn-buy">Compre agora</button>
+                <!--botao de fechar-->
                 <i class='bx bx-x' id="close-cart"></i>
             </div>
 
-            <!-- Scripts corrigidos -->
-            <script th:src="@{/scripts/loja.js}"></script>
-            <script th:src="@{/scripts/procura.js}"></script>
-        </div>
-    </section>
+            <script src="/scripts/loja.js"></script>
+            <script src="/scripts/procura.js"></script>
+
 </body>
+
 </html>

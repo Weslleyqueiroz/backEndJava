@@ -1,33 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Caminhos corrigidos com Thymeleaf -->
-    <link rel="stylesheet" th:href="@{/styles/formulario.css}">
-    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
-    <link rel="icon" th:href="@{/pictures/logo.png}" type="image/x-icon">
+    <!-- Ajuste no caminho dos arquivos CSS -->
+    <link rel="stylesheet" href="/styles/formulario.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/static/pictures/logo.png" type="image/x-icon">
     <title>Formulário</title>
 </head>
 
 <body>
     <div class="container">
         <div class="form-image">
-            <!-- Imagem corrigida -->
-            <img th:src="@{/pictures/undraw_building-a-website_1wrp.svg}" alt="">
+            <img src="/static/pictures/undraw_building-a-website_1wrp.svg" alt="">
         </div>
         <div class="form">
             <!-- Formulário de cadastro -->
-            <form th:action="@{/formulario}" method="post">
+            <form action="/formulario" method="post">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastre-se</h1>
                     </div>
                     <div class="login-button">
-                        <!-- Link corrigido -->
-                        <a th:href="@{/login}">Entrar</a>
+                        <!-- Botão para página de login -->
+                        <a href="/login">Entrar</a>
                     </div>
                 </div>
 
@@ -35,7 +34,8 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="firstname">Primeiro Nome</label>
-                        <input id="firstname" type="text" name="nome" placeholder="Digite seu primeiro nome" required>
+                        <input id="firstname" type="text" name="nome" placeholder="Digite seu primeiro nome"
+                            required>
                     </div>
 
                     <div class="input-box">
@@ -94,7 +94,7 @@
             </form>
         </div>
     </div>
-    <!-- Script corrigido -->
-    <script th:src="@{/scripts/formulario.js}"></script>
+    <script src="/scripts/formulario.js"></script>
 </body>
+
 </html>
