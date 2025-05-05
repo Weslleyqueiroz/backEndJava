@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/formulario.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" href="/pictures/logo.png" type="image/x-icon">
+    <!-- Ajuste no caminho dos arquivos CSS -->
+    <link rel="stylesheet" href="/static/styles/formulario.css">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link rel="icon" href="/static/pictures/logo.png" type="image/x-icon">
     <title>Formulário</title>
 </head>
 
 <body>
     <div class="container">
         <div class="form-image">
-            <img src="/pictures/undraw_building-a-website_1wrp.svg" alt="">
+            <img src="/static/pictures/undraw_building-a-website_1wrp.svg" alt="">
         </div>
         <div class="form">
             <!-- Formulário de cadastro -->
@@ -25,7 +26,7 @@
                     </div>
                     <div class="login-button">
                         <!-- Botão para página de login -->
-                       <a href="/login">Entrar</a>
+                        <a href="/login">Entrar</a>
                     </div>
                 </div>
 
@@ -41,20 +42,20 @@
                         <label for="lastname">Sobrenome</label>
                         <input id="lastname" type="text" name="sobrenome" placeholder="Digite seu sobrenome" required>
                     </div>
-					<div class="input-box">
-					        <label for="email">E-mail</label>
-					        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
-					    </div>
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
 
-					    <div class="input-box">
-					        <label for="numero">Celular</label>
-					        <input id="numero" type="tel" name="numero" placeholder="(xx) xxxx-xxxx">
-					    </div>
+                    <div class="input-box">
+                        <label for="numero">Celular</label>
+                        <input id="numero" type="tel" name="numero" placeholder="(xx) xxxx-xxxx">
+                    </div>
 
-					    <div class="input-box">
-					        <label for="senha">Senha</label>
-					        <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
-					    </div>
+                    <div class="input-box">
+                        <label for="senha">Senha</label>
+                        <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
+                    </div>
                 </div>
 
                 <!-- Seleção de gênero -->
@@ -65,22 +66,22 @@
 
                     <div class="gender-group">
                         <div class="gender-input">
-                            <input id="female" type="radio" name="gender" value = "Feminino">
+                            <input id="female" type="radio" name="gender" value="Feminino">
                             <label for="female">Feminino</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="male" type="radio" name="gender" value = "Masculino">
+                            <input id="male" type="radio" name="gender" value="Masculino">
                             <label for="male">Masculino</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="others" type="radio" name="gender" value = "Outros">
+                            <input id="others" type="radio" name="gender" value="Outros">
                             <label for="others">Outros</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="none" type="radio" name="gender" value = "Prefiro não dizer">
+                            <input id="none" type="radio" name="gender" value="Prefiro não dizer">
                             <label for="none">Prefiro não dizer</label>
                         </div>
                     </div>
@@ -88,12 +89,12 @@
 
                 <!-- Botão de continuar -->
                 <div class="continue-button">
-                  <button type="submit" id="continueButton">Continuar</button>
+                    <button type="submit" id="continueButton">Continuar</button>
                 </div>
             </form>
         </div>
     </div>
-    <!--<script src="scripts/formulario.js"></script> -->
+    <script src="/static/scripts/formulario.js"></script>
 </body>
 
 </html>

@@ -16,4 +16,8 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
 
     @Query(value = "SELECT * FROM sitelogin.usuario WHERE email = :email AND senha = :senha", nativeQuery = true)
     public Usuario login(String email, String senha);
+    
+    
+    
+    
 }

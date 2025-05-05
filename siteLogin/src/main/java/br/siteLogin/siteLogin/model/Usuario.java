@@ -34,8 +34,8 @@ public class Usuario {
 	@NotEmpty(message = "o genero não pode estar vazio")
 	private String gender;
 	
-	
 
+	
 	public String getSobrenome() {
 		return sobrenome;
 	}
