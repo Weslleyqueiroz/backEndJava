@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/login.css">
-    <link rel="stylesheet" href="/styles/main.css">
+    <!-- CSS corrigidos com Thymeleaf -->
+    <link rel="stylesheet" th:href="@{/styles/login.css}">
+    <link rel="stylesheet" th:href="@{/styles/main.css}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="icon" href="/pictures/logo.png" type="image/x-icon">
+    <!-- Ícone corrigido -->
+    <link rel="icon" th:href="@{/pictures/logo.png}" type="image/x-icon">
     <title>Login</title>
 </head>
 
 <body>
     <header class="header">
         <section>
+            <!-- Imagem corrigida -->
             <a href="/" class="logo">
-                <img src="/pictures/logo.png" width="130px" alt="logo">
+                <img th:src="@{/pictures/logo.png}" width="130px" alt="logo">
             </a>
 
             <nav class="navbar">
@@ -27,13 +30,11 @@
 
             <div class="icons">
                 <a href="/login">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABSUlEQVR4nN2UPU4DMRCFP4KSBgoOQc3CJRAdUYCEW1DwU1MCSRckLoByJTYEuAK/BT9iF430VlotNrYp86QnWfab8XhmPDDv6AADYALkwJuYa68vzb+wA9wDZYB3QC/F8SIwcjgqgKlYOM6HQCvmApfzHFiraTJd1NRdxKSlafQth01knpd0fc47yqcreh9cr3jwFX7gKeI08QLjnks88YgLT4rWPSkyXqdEU+osazi//UPvTOtLoN+LQJvWab5+4TXiU5WRfE5NUZnIm9giPwJX6rBVYEm09b7OnmKL3K8J3oFjYJkwTHMim8p+N/TRxqTjUrYzoO0T9ST6BDYTnG8BX7LdDomHEprBaWBCLgAHwIdszmKiaWkq1jviENgAVkRbH+ms0p3HjusKXeUz1JKzmLT40NbgsrazaO0zGm1te9Yt3oLOB34ACqrfyi5MYE4AAAAASUVORK5CYII=" alt="user-male-circle--v1">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABSUlEQVR4nN2UPU4DMRCFP4KSBgoOQc3CJRAdUYCEW1DwU1MCSRckLoByJTYEuAK/BT9iF430VlotNrYp86QnWfab8XhmPDDv6AADYALkwJuYa68vzb+wA9wDZYB3QC/F8SIwcjgqgKlYOM6HQCvmApfzHFiraTJd1NRdxKSlafQth01knpd0fc47yqcreh9cr3jwFX7gKeI08QLjnks88YgLT4rWPSkyXqdEU+osazi//UPvTOtLoN+LQJvWab5+4TXiU5WRfE5NUZnIm9giPwJX6rBVYEm09b7OnmKL3K8J3oFjYJkwTHMim8p+N/TRxqTjUrYzoO0T9ST6BDYTnG8BX7LdDouHEprBaWBCLgAHwIdszmKiaWkq1jviENgAVkRbH+ms0p3HjusKXeUz1JKzmLT40NbgsrazaO0zGm1te9Yt3oLOB34ACqrfyi5MYE4AAAAASUVORK5CYII=" alt="user-male-circle--v1">
                 </a>
-                <!--Icone de pesquisa que inicialmente é "fechado"-->
                 <a href="#" id="search-box">
                     <img width="30" height="30" src="https://img.icons8.com/ios/30/search--v1.png" alt="search--v1" />
                 </a>
-                <!--Icone de pesquisa abrindo...-->
 
                 <div id="search-container" style="display: none;">
                     <input type="text" id="search-input" placeholder="Digite sua busca..." />
@@ -49,47 +50,34 @@
     </header>
 
     <div class="wrapper">
-        <!-- O form agora envia as informações para /login com o método POST -->
-        <form action="/login" method="post">
+        <form th:action="@{/login}" method="post">
             <h1>Login</h1>
             
-            <!-- Campo de email -->
             <div class="input-box">
                 <input type="text" name="email" placeholder="Nome do usuário" required>
-                <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAg1JREFVR..."
-                    alt="user-email-icon" />
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAg1JREFVR..." alt="user-email-icon" />
             </div>
 
-            <!-- Campo de senha -->
             <div class="input-box">
                 <input type="password" name="senha" placeholder="Senha" required>
-                <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAexJREFVR..."
-                    alt="user-password-icon" />
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAexJREFVR..." alt="user-password-icon" />
             </div>
 
-            <!-- Lembrar e Esquecer senha -->
             <div class="remember-forgot">
                 <label> <input type="checkbox"> Lembrar de mim </label>
                 <a href="#">Esqueceu a senha?</a>
             </div>
 
-            <!-- Botão de login -->
             <button type="submit" class="btn">Login</button>
 
-            <!-- Link para a página de cadastro -->
             <div class="register-link">
-                <p>Não possui uma conta? <a href="/formulario">Registra-se</a></p>
+                <p>Não possui uma conta? <a th:href="@{/formulario}">Registra-se</a></p>
             </div>
-
         </form>
     </div>
 
-    <!-- Scripts -->
-    <script src="/scripts/login.js"></script>
-    <script src="/scripts/procura.js"></script>
-    
+    <!-- JS corrigidos -->
+    <script th:src="@{/scripts/login.js}"></script>
+    <script th:src="@{/scripts/procura.js}"></script>
 </body>
-
 </html>
