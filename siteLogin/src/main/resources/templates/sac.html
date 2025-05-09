@@ -1,140 +1,124 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/loja.css">
-    <link rel="stylesheet" href="/css/sac.css">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/loja.css}">
+    <link rel="stylesheet" th:href="@{/css/sac.css}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="icon" href="./pictures/logo.png" type="image/x-icon">
+          rel="stylesheet">
+    <link rel="icon" th:href="@{/pictures/logo.png}" type="image/x-icon">
     <title>SAC</title>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <section>
-            <a href="/" class="logo">
-                <img src="/pictures/logo.png" width="130px" alt="logo">
+<!-- HEADER -->
+<header class="header">
+    <section>
+        <a th:href="@{/}" class="logo">
+            <img th:src="@{/pictures/logo.png}" width="130px" alt="logo">
+        </a>
+
+        <nav class="navbar">
+            <a th:href="@{/}">HOME</a>
+            <a th:href="@{/loja}">SHOP ALL</a>
+            <a th:href="@{/sac}">SAC</a>
+            <a th:href="@{/sobre}">SOBRE</a>
+        </nav>
+
+        <div class="icons">
+            <a th:href="@{/login}">
+                <img src="data:image/png;base64,..." alt="user-icon" />
+            </a>
+            <a href="#" id="search-box">
+                <img width="30" height="30" src="https://img.icons8.com/ios/30/search--v1.png" alt="search--v1" />
             </a>
 
-            <nav class="navbar">
-                <a href="/">HOME</a>
-                <a href="/loja">SHOP ALL</a>
-                <a href="/sac">SAC</a>
-                <a href="/sobre">SOBRE</a>
-            </nav>
-
-            <div class="icons">
-                <a href ="/login">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABSUlEQVR4nN2UPU4DMRCFP4KSBgoOQc3CJRAdUYCEW1DwU1MCSRckLoByJTYEuAK/BT9iF430VlotNrYp86QnWfab8XhmPDDv6AADYALkwJuYa68vzb+wA9wDZYB3QC/F8SIwcjgqgKlYOM6HQCvmApfzHFiraTJd1NRdxKSlafQth01knpd0fc47yqcreh9cr3jwFX7gKeI08QLjnks88YgLT4rWPSkyXqdEU+osazi//UPvTOtLoN+LQJvWab5+4TXiU5WRfE5NUZnIm9giPwJX6rBVYEm09b7OnmKL3K8J3oFjYJkwTHMim8p+N/TRxqTjUrYzoO0T9ST6BDYTnG8BX7LdDomHEprBaWBCLgAHwIdszmKiaWkq1jviENgAVkRbH+ms0p3HjusKXeUz1JKzmLT40NbgsrazaO0zGm1te9Yt3oLOB34ACqrfyi5MYE4AAAAASUVORK5CYII=" alt="user-male-circle--v1">
-                    </a>
-                <a href="#" id="search-box">
-                    <img width="30" height="30" src="https://img.icons8.com/ios/30/search--v1.png" alt="search--v1" />
-                </a>
-
-                <div id="search-container" style="display: none;">
-                    <input type="text" id="search-input" placeholder="Digite sua busca..." />
-                    <button id="search-btn">Buscar</button>
-                </div>
-
-                <a href="#" id="open-cart">
-                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/shopping-cart--v1.png"
-                        alt="shopping-cart--v1" />
-                </a>
+            <div id="search-container" style="display: none;">
+                <input type="text" id="search-input" placeholder="Digite sua busca..." />
+                <button id="search-btn">Buscar</button>
             </div>
-        </section>
-    </header>
 
-    <!-- TROCAS E DEVOLUÇÕES -->
-    <div class="content-sac">
-        <h1 class="main-page-title">Trocas e devoluções</h1>
-        <div class="content-sac-p">
-            <p>Recebeu seu pedido e precisa realizar uma troca? </p>
-            <p>Fica tranquilo, aqui você encontra todas as informações necessárias e importantes para realizar o
-                procedimento.</p>
-            <h3>
-                <strong>
-                    Para solicitar uma troca ou devolução de pedidos feitos pelo site:
-                </strong>
-            </h3>
-            <ul>
-                <li>
-                    <a href="#">Clique aqui</a> e digite o código do pedido e o email utilizado na compra.
-                </li>
-                <li>
-                    Confirmando o direito à troca, enviaremos a você um código de frete reverso dos Correios para a
-                    postagem com as informações para envio sem custo.
-                </li>
-                <li>
-                    A postagem deve ser feita dentro do prazo em uma das agências dos Correios.
-                </li>
-                <li>
-                    Atenção: se o produto chegar até nós sem a etiqueta fixada, será devolvido na modalidade Sedex,
-                    custeado pelo cliente.
-                </li>
-                <li>
-                    Após o recebimento, analisaremos o caso em até 15 dias úteis. Sendo aprovado, será realizada a
-                    opção escolhida pelo cliente: troca, estorno do valor ou liberação de vale-compra.
-                </li>
-            </ul>
-            <p>Se você tiver alguma dúvida entre em contato conosco pelo email <a
-                    href="#">suporte.starboys@gmail.com</a></p>
-            <p>
-                <span>
-                    Em casos de troca por algum defeito, serão solicitadas fotos com o apontamento da avaria da peça
-                    para avaliação da nossa equipe para um possível envio de um novo produto.
-                </span>
-            </p>
-            <p>
-                <span>
-                    Para devoluções, após recebermos e analisarmos a solicitação, o valor retornará pelo mesmo meio
-                    de pagamento utilizado na compra ou como vale-compras para utilizar em nosso site. Não é
-                    possível fazer devoluções nas lojas físicas.
-                </span>
-            </p>
-        </div>
-    </div>
-
-    <!-- CARRINHO DE COMPRAS -->
-    <div class="cart">
-        <h2 class="cart-title">CARRINHO DE COMPRA</h2>
-        <div class="cart-content"></div>
-        <div class="total">
-            <div class="total-title">Total</div>
-            <div class="total-price">R$200,00</div>
-        </div>
-        <button type="button" class="btn-buy">Compre agora</button>
-        <i class='bx bx-x' id="close-cart"></i>
-    </div>
-
-    <!-- ENDEREÇO -->
-    <section class="address" id="address">
-        <h2 class="title">NOSSO ENDEREÇO</h2>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116983.75771962224!2d-46.86833499296717!3d-23.613568712228727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57d8926c9889%3A0x9ea371de55db6f79!2sExclusiviist!5e0!3m2!1spt-BR!2sbr!4v1742411298855!5m2!1spt-BR!2sbr"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
-
-    <!-- RODAPÉ -->
-    <section class="footer">
-        <div class="share">
-            <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/instagram-new--v1.png"
-                alt="instagram-new--v1" />
+            <a href="#" id="open-cart">
+                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/shopping-cart--v1.png"
+                     alt="shopping-cart--v1" />
+            </a>
         </div>
     </section>
+</header>
 
-    <!-- SCRIPTS -->
-    <script src="/scripts/loja.js"></script>
-    <script src="/scripts/procura.js"></script>
+<!-- TROCAS E DEVOLUÇÕES -->
+<div class="content-sac">
+    <h1 class="main-page-title">Trocas e devoluções</h1>
+    <div class="content-sac-p">
+        <p>Recebeu seu pedido e precisa realizar uma troca? </p>
+        <p>Fica tranquilo, aqui você encontra todas as informações necessárias e importantes para realizar o
+            procedimento.</p>
+        <h3><strong>Para solicitar uma troca ou devolução de pedidos feitos pelo site:</strong></h3>
+        <ul>
+            <li><a href="#" th:href="@{/troca}">Clique aqui</a> e digite o código do pedido e o email utilizado na compra.</li>
+            <li>Confirmando o direito à troca, enviaremos a você um código de frete reverso dos Correios para a
+                postagem com as informações para envio sem custo.</li>
+            <li>A postagem deve ser feita dentro do prazo em uma das agências dos Correios.</li>
+            <li>Atenção: se o produto chegar até nós sem a etiqueta fixada, será devolvido na modalidade Sedex,
+                custeado pelo cliente.</li>
+            <li>Após o recebimento, analisaremos o caso em até 15 dias úteis. Sendo aprovado, será realizada a
+                opção escolhida pelo cliente: troca, estorno do valor ou liberação de vale-compra.</li>
+        </ul>
+        <p>Se você tiver alguma dúvida entre em contato conosco pelo email <a href="mailto:suporte.starboys@gmail.com">suporte.starboys@gmail.com</a></p>
+        <p>
+            <span>Em casos de troca por algum defeito, serão solicitadas fotos com o apontamento da avaria da peça
+                para avaliação da nossa equipe para um possível envio de um novo produto.</span>
+        </p>
+        <p>
+            <span>Para devoluções, após recebermos e analisarmos a solicitação, o valor retornará pelo mesmo meio
+                de pagamento utilizado na compra ou como vale-compras para utilizar em nosso site. Não é
+                possível fazer devoluções nas lojas físicas.</span>
+        </p>
+    </div>
+</div>
+
+<!-- CARRINHO DE COMPRAS -->
+<div class="cart">
+    <h2 class="cart-title">CARRINHO DE COMPRA</h2>
+    <div class="cart-content">
+        <!-- Produtos dinamicamente inseridos via JS ou Thymeleaf -->
+    </div>
+    <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price" th:text="${valorTotal != null ? 'R$' + valorTotal : 'R$0,00'}">R$200,00</div>
+    </div>
+    <button type="button" class="btn-buy">Compre agora</button>
+    <i class='bx bx-x' id="close-cart"></i>
+</div>
+
+<!-- ENDEREÇO -->
+<section class="address" id="address">
+    <h2 class="title">NOSSO ENDEREÇO</h2>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116983.75771962224!2d-46.86833499296717!3d-23.613568712228727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57d8926c9889%3A0x9ea371de55db6f79!2sExclusiviist!5e0!3m2!1spt-BR!2sbr!4v1742411298855!5m2!1spt-BR!2sbr"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
+<!-- RODAPÉ -->
+<section class="footer">
+    <div class="share">
+        <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/instagram-new--v1.png"
+             alt="instagram-new--v1" />
+    </div>
+</section>
+
+<!-- SCRIPTS -->
+<script th:src="@{/scripts/loja.js}"></script>
+<script th:src="@{/scripts/procura.js}"></script>
 
 </body>
 </html>

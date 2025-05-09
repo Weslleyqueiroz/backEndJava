@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Ajuste no caminho dos arquivos CSS -->
-    <link rel="stylesheet" href="/css/formulario.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" href= "/pictures/logo.png" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/css/formulario.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="icon" th:href="@{/pictures/logo.png}" type="image/x-icon">
     <title>Formulário</title>
 </head>
 
 <body>
     <div class="container">
         <div class="form-image">
-            <img src="/pictures/undraw_building-a-website_1wrp.svg" alt="">
+            <img th:src="@{/pictures/undraw_building-a-website_1wrp.svg}" alt="">
         </div>
         <div class="form">
             <!-- Formulário de cadastro -->
-            <form action="/formulario" method="post">
+            <form th:action="@{/formulario}" method="post">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastre-se</h1>
                     </div>
                     <div class="login-button">
                         <!-- Botão para página de login -->
-                        <a href="/login">Entrar</a>
+                        <a th:href="@{/login}">Entrar</a>
                     </div>
                 </div>
 
@@ -94,7 +94,7 @@
             </form>
         </div>
     </div>
-    <script src="/scripts/formulario.js"></script>
+    <script th:src="@{/scripts/formulario.js}"></script>
 </body>
 
 </html>

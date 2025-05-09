@@ -1,46 +1,43 @@
-function continuar(event) {
-    // Pegando os dados do formulário
-    const firstname = document.getElementById("nome").value;
-    const lastname = document.getElementById("sobrenome").value;
-    const email = document.getElementById("email").value;
-    const number = document.getElementById("numero").value;
-    const password = document.getElementById("senha").value;
-    const gender = document.querySelector('input[name="gender"]:checked'); // Aqui estamos pegando o gênero selecionado
 
-    // Validação dos campos
-    if (!firstname || !lastname || !email || !number || !password || !gender) {
-        alert("Por favor, preencha todos os campos.");
-        return;
+    // função pra quando clicar em continuar quando terminar os dados levar pra pagina
+    function continuar() {
+        // pra pegar os dados
+        const firstname = document.getElementById("firstname").value;
+        const lastname = document.getElementById("lastname").value;
+        const email = document.getElementById("email").value;
+        const number = document.getElementById("number").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+        
+        // vericando se o genero foi escolhido
+        const gender = document.querySelector('input[name="gender"]:checked');
+        
+        // Validação do formulário
+        if (!firstname || !lastname || !email || !number || !password || !confirmPassword || !gender) {
+            alert("Por favor, preencha todos os campos.");
+            return; // se o cara n completar os dados ele vai ficar dando alerta pra completar
+        }
+        
+
+        if (password !== confirmPassword) {
+            alert("As senhas não coincidem.");
+            return; // se a senha dele n for igual ele vai falar pra colocar uma senha igual
+        }
+
+        // armazenamento dos dados
+        localStorage.setItem("firstname", firstname);
+        localStorage.setItem("lastname", lastname);
+        localStorage.setItem("email", email);
+        localStorage.setItem("number", number);
+        localStorage.setItem("gender", gender.value); // Corrigido para pegar o valor correto
+
+        // redirecionamento pra pagina
+        window.location.href = "index.html";
     }
 
-    // Validação de email com regex
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (!emailRegex.test(email)) {
-        alert("Por favor, insira um email válido.");
-        return;
-    }
+    // clique do botao continuar
+    document.getElementById("continueButton").addEventListener("click", function(event) {
+        event.preventDefault();
+        continuar(); // chamando a função dnv pra validar e continuar
+    });
 
-    // Validação de número (exemplo de formato simples)
-    const phoneRegex = /^[0-9]{10,11}$/; // Número com 10 ou 11 dígitos
-    if (!phoneRegex.test(number)) {
-        alert("Por favor, insira um número de telefone válido.");
-        return;
-    }
-
-    // NÃO armazene a senha em localStorage
-    // Armazenando informações não sensíveis
-    localStorage.setItem("nome", firstname);
-    localStorage.setItem("sobrenome", lastname);
-    localStorage.setItem("email", email);
-    localStorage.setItem("numero", number);
-    localStorage.setItem("genero", gender.value);
-
-    // Redirecionamento
-    window.location.href = "/"; // Redireciona para a página inicial
-    event.preventDefault();  // Previne o envio do formulário
-}
-
-// Clique do botão 'Continuar'
-document.getElementById("continueButton").addEventListener("click", function(event) {
-    continuar(event); // Passando o evento como parâmetro
-});
