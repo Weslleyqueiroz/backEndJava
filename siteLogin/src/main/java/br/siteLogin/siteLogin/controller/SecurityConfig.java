@@ -10,42 +10,44 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class SecurityConfig {
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    	 http
-         .csrf(csrf -> csrf.disable())
-         .authorizeHttpRequests(auth -> auth
-             .requestMatchers(
-                 "/",
-                 "/css/**",
-                 "/scripts/**",
-                 "/pictures/**",
-                 "/login",
-                 "/formulario"
-             ).permitAll()
-             .anyRequest().authenticated()
-         )
-         .formLogin(login -> login
-             .loginPage("/login")
-             .defaultSuccessUrl("/")
-             .permitAll()
-         );
-     return http.build();
- }
-    @Configuration
-    public class StaticResourceConfig implements WebMvcConfigurer {
-        @Override
-        public void addResourceHandlers(ResourceHandlerRegistry registry) {
-            registry
-                .addResourceHandler("/css/**")
-                .addResourceLocations("classpath:/static/css/");
-            registry
-                .addResourceHandler("/scripts/**")
-                .addResourceLocations("classpath:/static/scripts/");
-            registry
-                .addResourceHandler("/pictures/**")
-                .addResourceLocations("classpath:/static/pictures/");
-        }
-    }
-    
-}	
+
+	    @Bean
+	    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	        http
+	            .csrf(csrf -> csrf.disable()) // 
+	            .authorizeHttpRequests(auth -> auth
+	             
+	                .requestMatchers(
+	                    "/css/**",
+	                    "/js/**",
+	                    "/images/**",
+	                    "/pictures/**",
+	                    "/fonts/**",
+	                    "/webjars/**"
+	                ).permitAll()
+	                
+	              
+	                .requestMatchers(
+	                    "/",
+	                    "/login",
+	                    "/formulario",
+	                    "/error" 
+	                ).permitAll()
+	                
+	                
+	                .anyRequest().authenticated()
+	            )
+	            .formLogin(login -> login
+	                .loginPage("/login")
+	                .defaultSuccessUrl("/")
+	                .permitAll()
+	            )
+	            .logout(logout -> logout
+	                .logoutSuccessUrl("/login?logout")
+	                .permitAll()
+	            );
+	        
+	        return http.build();
+	    }
+	}
+
