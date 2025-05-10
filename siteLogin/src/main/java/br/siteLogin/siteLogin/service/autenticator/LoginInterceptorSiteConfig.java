@@ -1,23 +1,32 @@
 package br.siteLogin.siteLogin.service.autenticator;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import java.io.IOException;
 
-@Configuration
-public class LoginInterceptorSiteConfig implements WebMvcConfigurer {
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
 
-    @Autowired
-    private loginInterceptor loginInterceptor;
+import br.siteLogin.siteLogin.service.CookieService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@Component
+public class LoginInterceptorSiteConfig implements HandlerInterceptor {
 
     @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(loginInterceptor).excludePathPatterns(
-                "/login",
-                "/logar",
-                "/error",
-                "/cadastroUsuario"
-        );
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
+        String requestURI = request.getRequestURI();
+
+        if (requestURI.equals("/login")) {
+            return true; 
+        }
+
+      
+        if (CookieService.getCookie(request, "UsuarioId") != null) {
+            return true; 
+        }
+
+  
+        response.sendRedirect("/login");
+        return false;
     }
 }

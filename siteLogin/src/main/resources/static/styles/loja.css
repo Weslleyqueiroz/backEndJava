@@ -1,0 +1,243 @@
+.cart{
+    position: fixed;
+    top: 0;
+    right: -550px;  /* Carrinho começa fora da tela */
+    width: 360px;
+    max-width: 100%; /* Garante que o carrinho nunca ultrapasse 100% da tela */
+    min-height: 100vh;
+    padding: 20px;
+    background: bisque;
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+    z-index: 999;
+    transition: right 0.3s ease;
+}
+.cart.active{
+    right: 0;
+}
+
+.cart-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+.cart-box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    gap: 1rem;
+}
+.cart-img{
+    height: 5rem; 
+    width: 5rem;
+    object-fit: cover; /* Ajusta a imagem para cobrir a área sem distorcer */
+    border-radius: 8px; /* Adicionando borda arredondada para um estilo mais suave */
+    padding: 5px; /* Pequeno espaço entre a imagem e a borda */
+}
+.detail-box{
+    display: grid;
+    row-gap: 0.5rem;
+}
+.cart-product-title{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.cart-price{
+    font-weight: 500;
+}
+
+.cart-quantity{
+    border: 1px solid black;
+    outline: #333;
+    width: 2.4rem;
+    text-align: center;
+    font-size: 1rem;
+}
+.cart-remove{
+    font-size: 24px;
+    color: red;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Adicionando transição para o efeito de hover */
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 15px 0;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    max-width: 600px; /* Ajuste conforme necessário */
+    margin: 0 auto; /* Centraliza */    
+}
+.total-title{
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+.total-price{
+    font-size: 1.5rem;
+    color: #333;
+    margin-left: 10px;
+}
+.btn-buy{
+    display: flex;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    border: none;
+    background: #000000;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btn-buy:hover{
+    background: black;
+}
+#close-cart{
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem; /* Ajuste o tamanho */
+    color: #333; /* Escolha a cor que você preferir */
+    cursor: pointer; /* Adiciona o curGarante que o ícone de fechar fique acima de outros elementos */
+}
+
+.section-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.cart.active {
+    display: block; /* Exibir quando ativo */
+}
+
+.cart .cart-content{
+    margin-top: 2rem;
+    border-bottom: var(--border);
+    padding-bottom: 1rem;
+}
+
+.cart .cart-box{
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.cart .cart-img{
+    height: 5rem;
+    width: 5rem;
+    object-fit: cover;
+}
+
+.cart .detail-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 1rem;
+}
+
+.cart .cart-product-title{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.cart .cart-price{
+    font-size: 1.4rem;
+    color: #5E686D;
+}
+
+.cart .cart-quantity{
+    width: 3rem;
+    margin-top: 0.5rem;
+}
+
+.cart .cart-remove{
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: red;
+    margin-top: 0.5rem;
+}
+
+.cart .total{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.cart .total-price{
+    font-size: 2rem;
+    color: #000000;
+    margin-top: 1rem;
+}
+
+.cart .btn-buy{
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1.5rem 2rem;
+    font-size: 1.7rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease; /* Suavizar transição ao passar o mouse */
+}
+
+.cart .btn-buy:hover{
+    background-color: #333;
+}
+
+/*responsividade */
+
+
+@media (max-width: 1080px){
+    .nav{
+        padding: 15px;
+    }
+    section {
+        padding: 3rem 0 2rem;
+    }
+    .container{
+        margin: 0 auto;
+        width: 90%;
+        max-width: 100%;
+    }
+    .menu{
+        margin-top: 2rem !important;
+    }
+}
+
+/* tela de 400px */
+@media (max-width: 400px){
+    .nav{
+        padding: 11px;
+    }
+    .logo{
+        font-size: 1rem;
+    }
+    .cart{
+        width: 320px;
+    }
+    .btn-buy{
+        font-size: 1.4rem;
+        padding: 1rem 2 rem;
+    }
+}
+
+@media (max-width: 360px){
+    .menu{
+    margin-top: 1rem !important;
+}
+    .cart{
+    width: 280px;
+}
+    .cart-title{
+        font-size: 1.4rem;
+    }
+    .cart .cart-product-title{
+        font-size: 1.2rem;
+    }
+}
+

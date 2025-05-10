@@ -1,38 +1,31 @@
 package br.siteLogin.siteLogin.service;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.util.Arrays;
-import java.util.Optional;
-
 import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
 
 public class CookieService {
 
-	public static void setCookie(HttpServletResponse response, String key, String valor,  int segundos) throws UnsupportedEncodingException {
-		Cookie cookie = new Cookie(key, URLEncoder.encode(valor, "UTF-8"));
-		cookie.setMaxAge(segundos);
-		response.addCookie(cookie);
-	}
-	
-	public static String getCookie(HttpServletRequest request, String key) throws UnsupportedEncodingException {
-		String valor = Optional.ofNullable(request.getCookies())
-				.flatMap(cookies -> Arrays.stream(cookies)
-				.filter(cookie -> key.equals(cookie.getName()))
-				.findAny()
-				).map(e -> e.getValue())
-				.orElse(null);
-		
-		if( valor != null) {
-			valor =  URLDecoder.decode(valor, "UTF-8");
-			return valor;
-		}
-		
-		return valor;
-	}
-	
-	
+   
+    public static void setCookie(HttpServletResponse response, String nome, String valor, int segundos) {
+        Cookie cookie = new Cookie(nome, valor);
+        cookie.setMaxAge(segundos); 
+        cookie.setPath("/"); 
+        cookie.setHttpOnly(true);
+        cookie.setSecure(true); 
+        response.addCookie(cookie); 
+    }
+
+   
+    public static String getCookie(HttpServletRequest request, String nome) {
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals(nome)) {
+                    return cookie.getValue();
+                }
+            }
+        }
+        return null;
+    }
 }
