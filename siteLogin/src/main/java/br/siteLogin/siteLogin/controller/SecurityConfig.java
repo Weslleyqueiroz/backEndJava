@@ -10,15 +10,15 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import br.siteLogin.siteLogin.service.UsuarioDetailsService;
+import br.siteLogin.siteLogin.service.UsuarioService;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
-    private final UsuarioDetailsService usuarioDetailsService;
+    private final UsuarioService usuarioDetailsService;
 
-    public SecurityConfig(UsuarioDetailsService usuarioDetailsService) {
+    public SecurityConfig(UsuarioService usuarioDetailsService) {
         this.usuarioDetailsService = usuarioDetailsService;
     }
 
@@ -27,18 +27,16 @@ public class SecurityConfig {
         http
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/styles/**", "/scripts/**", "/pictures/**").permitAll()
-                .requestMatchers("/login", "/formulario").permitAll()
+                .requestMatchers("/","/loja","/sac", "/sobre", "/login", "/formulario").permitAll()
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form
                 .loginPage("/login")
-                .defaultSuccessUrl("/", true) 
-                .failureUrl("/login?error=true") 
+                .defaultSuccessUrl("/") 
                 .permitAll()
             )
             .logout(logout -> logout
-                .logoutUrl("/logout")
-                .logoutSuccessUrl("/login?logout=true")
+                .logoutSuccessUrl("/login?logout")
                 .permitAll()
             );
 

@@ -1,43 +1,62 @@
+document.addEventListener("DOMContentLoaded", function() {
 
-    // função pra quando clicar em continuar quando terminar os dados levar pra pagina
-    function continuar() {
-        // pra pegar os dados
+    // função para quando clicar em continuar e validar os dados
+    function continuar(event) {
+        event.preventDefault(); // Impede o envio do formulário
+
+        // para pegar os dados
         const firstname = document.getElementById("firstname").value;
         const lastname = document.getElementById("lastname").value;
         const email = document.getElementById("email").value;
-        const number = document.getElementById("number").value;
-        const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirmPassword").value;
-        
-        // vericando se o genero foi escolhido
+        const number = document.getElementById("numero").value;
+        const password = document.getElementById("senha").value;
+
+        // verificando se o gênero foi escolhido
         const gender = document.querySelector('input[name="gender"]:checked');
-        
+
         // Validação do formulário
-        if (!firstname || !lastname || !email || !number || !password || !confirmPassword || !gender) {
+        if (!firstname || !lastname || !email || !number || !password || !gender) {
             alert("Por favor, preencha todos os campos.");
-            return; // se o cara n completar os dados ele vai ficar dando alerta pra completar
+            return; // se o cara não completar os dados, ele vai ficar dando alerta pra completar
         }
+
         
+        const formData = {
+            nome: firstname,
+            sobrenome: lastname,
+            email: email,
+            numero: number,
+            senha: password,
+            gender: gender.value
+        };
 
-        if (password !== confirmPassword) {
-            alert("As senhas não coincidem.");
-            return; // se a senha dele n for igual ele vai falar pra colocar uma senha igual
-        }
-
-        // armazenamento dos dados
-        localStorage.setItem("firstname", firstname);
-        localStorage.setItem("lastname", lastname);
-        localStorage.setItem("email", email);
-        localStorage.setItem("number", number);
-        localStorage.setItem("gender", gender.value); // Corrigido para pegar o valor correto
-
-        // redirecionamento pra pagina
-        window.location.href = "index.html";
+        // Realizando a requisição POST para o backend
+        fetch("/cadastrar", { // Ajuste o endpoint conforme a sua rota
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Se o cadastro for bem-sucedido, redireciona
+                window.location.href = "/";
+            } else {
+                alert("Erro ao cadastrar, tente novamente.");
+            }
+        })
+        .catch(error => {
+            console.error("Erro:", error);
+            alert("Erro na comunicação com o servidor.");
+        });
     }
 
-    // clique do botao continuar
-    document.getElementById("continueButton").addEventListener("click", function(event) {
-        event.preventDefault();
-        continuar(); // chamando a função dnv pra validar e continuar
-    });
+    // Adicionando evento de clique ao botão de continuar
+    const continueButton = document.getElementById("continueButton");
+    if (continueButton) {
+        continueButton.addEventListener("click", continuar); // chamando a função para validar e continuar
+    }
 
+});

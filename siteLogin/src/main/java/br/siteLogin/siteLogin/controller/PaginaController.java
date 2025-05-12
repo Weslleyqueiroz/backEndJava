@@ -25,4 +25,8 @@ public class PaginaController {
 	public String sobre() {
 		return "sobre";
 	}
+	@GetMapping("/formulario")
+	public String formulario() {
+	    return "formulario";
+	}
 }
