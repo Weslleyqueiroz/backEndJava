@@ -1,85 +1,80 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS com Thymeleaf -->
-	<link th:href="@{/styles/css/login.css}" rel="stylesheet">
-	<link th:href="@{/styles/css/main.css}" rel="stylesheet">
-
+    <link rel="stylesheet" href="/styles/login.css">
+    <link rel="stylesheet" href="/styles/main.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- Favicon com Thymeleaf -->
-    <link th:href="@{/pictures/logo.png}" rel="icon" type="image/x-icon">
+    <link href="/pictures/logo.png" rel="icon" type="image/x-icon">
     <title>Login</title>
 </head>
 
 <body>
     <header class="header">
         <section>
-            <a th:href="@{/}" class="logo">
-                <!-- Imagem com Thymeleaf -->
-                <img th:src="@{/pictures/logo.png}" width="130px" alt="logo">
+            <a href="/" class="logo">
+                <img width="130" height="auto" src="https://i.imgur.com/H9RO5B2.png" alt="logo">
             </a>
-
             <nav class="navbar">
-                <a th:href="@{/}">HOME</a>
-                <a th:href="@{/loja}">SHOP ALL</a>
-                <a th:href="@{/sac}">SAC</a>
-                <a th:href="@{/sobre}">SOBRE</a>
+                <a href="/">HOME</a>
+                <a href="/loja">SHOP ALL</a>
+                <a href="/sac">SAC</a>
+                <a href="/sobre">SOBRE</a>
             </nav>
-
             <div class="icons">
-                <a th:href="@{/login}">
+                <a href="/login">
                     <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/user.png" alt="user"/>
                 </a>
-                <!--Icone de pesquisa que inicialmente é "fechado"-->
                 <a href="#" id="search-box">
                     <img width="30" height="30" src="https://img.icons8.com/ios/30/search--v1.png" alt="search--v1" />
                 </a>
-                <!--Icone de pesquisa abrindo...-->
-
                 <div id="search-container" style="display: none;">
                     <input type="text" id="search-input" placeholder="Digite sua busca..." />
                     <button id="search-btn">Buscar</button>
                 </div>
-
                 <a href="#" id="open-cart">
-                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/shopping-cart--v1.png"
-                        alt="shopping-cart--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/shopping-cart--v1.png" alt="shopping-cart--v1" />
                 </a>
             </div>
         </section>
     </header>
 
     <div class="wrapper">
-        <form th:action="@{/login}" method="post">
+        <form id="loginForm" action="/login" method="post">
             <h1>Login</h1>
             
-            <!-- Campo de email -->
             <div class="input-box">
                 <input type="text" name="email" placeholder="Nome do usuário" required>
                 <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/new-post.png" alt="new-post"/>
             </div>
 
-            <!-- Campo de senha -->
             <div class="input-box">
                 <input type="password" name="senha" placeholder="Senha" required>
                 <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/password.png" alt="password"/>
             </div>
 
-            <!-- Lembrar e Esquecer senha -->
             <div class="remember-forgot">
-                <label> <input type="checkbox"> Lembrar de mim </label>
+                <label><input type="checkbox"> Lembrar de mim </label>
                 <a href="#">Esqueceu a senha?</a>
             </div>
 
-            <!-- Botão de login -->
+            <div class="error-message" id="error-message" style="color: red; text-align: center; display: none;">
+                E-mail ou senha incorretos. Tente novamente.
+            </div>
+
             <button type="submit" class="btn">Login</button>
 
-            <!-- Link para a página de cadastro -->
             <div class="register-link">
-                <p>Não possui uma conta? <a th:href="@{/formulario}">Registra-se</a></p>
+                <p>Não possui uma conta? <a href="/formulario">Registra-se</a></p>
             </div>
         </form>
     </div>
+
+    <script src="/scripts/login.js"></script>
+    <script src="/scripts/loja.js"></script>
+    <script src="/scripts/procura.js"></script>
+</body>
+
+</html>
