@@ -1,25 +1,21 @@
-// login.js
-document.addEventListener("DOMContentLoaded", function() {
-    const loginForm = document.querySelector("#loginForm");
+document.addEventListener("DOMContentLoaded", function () {
+    // Abre e fecha a barra de busca
+    const searchBox = document.querySelector("#search-box");
+    const searchContainer = document.getElementById("search-container");
 
-    loginForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-        
-        const email = document.querySelector("input[name='email']").value;
-        const senha = document.querySelector("input[name='senha']").value;
-        
-        const validEmail = "usuario@example.com";
-        const validSenha = "senha123";
-        
-        if (email === validEmail && senha === validSenha) {
-            window.location.href = "index.html";
-        } else {
-            document.getElementById("error-message").style.display = "block";
+    if (searchBox && searchContainer) {
+        searchBox.addEventListener("click", function () {
+            searchContainer.style.display = 
+                searchContainer.style.display === "none" ? "block" : "none";
+        });
+    }
+
+    // Exibe mensagem de erro se ela estiver visível na URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("error") === "true") {
+        const errorMessage = document.getElementById("error-message");
+        if (errorMessage) {
+            errorMessage.style.display = "block";
         }
-    });
-
-    document.querySelector("#search-box").addEventListener("click", function() {
-        const searchContainer = document.getElementById("search-container");
-        searchContainer.style.display = searchContainer.style.display === "none" ? "block" : "none";
-    });
+    }
 });

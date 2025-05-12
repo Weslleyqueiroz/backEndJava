@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link th:href="@{/pictures/logo.png}" rel="icon" type="image/x-icon">
+    <link href="/pictures/logo.png" rel="icon" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
 
     <title>LOJA</title>
@@ -19,19 +19,19 @@
     <!-- NAVBAR -->
     <header class="header">
         <section>
-           <a th:href="@{/}" class="logo">
-                <img th:src="@{/pictures/logo.png}" width="130px" alt="logo">
+           <a href="/" class="logo">
+                <img src="/pictures/logo.png" width="130px" alt="logo">
             </a>
 
             <nav class="navbar">
-                <a th:href="@{/}">HOME</a>
-                <a th:href="@{/loja}">SHOP ALL</a>
-                <a th:href="@{/sac}">SAC</a>
-                <a th:href="@{/sobre}">SOBRE</a>
+                <a href="/">HOME</a>
+                <a href="/loja">SHOP ALL</a>
+                <a href="/sac">SAC</a>
+                <a href="/sobre">SOBRE</a>
             </nav>
 
             <div class="icons">
-                <a th:href="@{/login}">
+                <a href="/login">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAY..." alt="usuário">
                 </a>
 
@@ -58,42 +58,42 @@
         <div class="box-container">
             <!-- PRODUTOS -->
             <div class="box">
-                <img th:src="@{/pictures/camisas/camisaCarrinho5.png}" alt="item-1" class="product-img">
+                <img src="/pictures/camisas/camisaCarrinho5.png" alt="item-1" class="product-img">
                 <h3 class="product-title">Camisa Streewear Caveiras</h3>
                 <div class="price">R$180,00 <span>R$200,00</span></div>
                 <a href="#" class="add-cart">Adicione ao carrinho</a>
             </div>
 
             <div class="box">
-                <img th:src="@{/pictures/camisas/camisaCarrinho2.png}" alt="item-2" class="product-img">
+                <img src="/pictures/camisas/camisaCarrinho2.png" alt="item-2" class="product-img">
                 <h3 class="product-title">Camisa Streewear</h3>
                 <div class="price">R$100,00 <span>R$200,00</span></div>
                 <a href="#" class="add-cart">Adicione ao carrinho</a>
             </div>
 
             <div class="box">
-                <img th:src="@{/pictures/camisas/camisaCarrinho3.png}" alt="item-3" class="product-img">
+                <img src="/pictures/camisas/camisaCarrinho3.png" alt="item-3" class="product-img">
                 <h3 class="product-title">Camisa Gengar</h3>
                 <div class="price">R$90,00 <span>R$100,00</span></div>
                 <a href="#" class="add-cart">Adicione ao carrinho</a>
             </div>
 
             <div class="box">
-                <img th:src="@{/pictures/camisas/camisaCarrinho4.png}" alt="item-4" class="product-img">
+                <img src="/pictures/camisas/camisaCarrinho4.png" alt="item-4" class="product-img">
                 <h3 class="product-title">Camisa oversized</h3>
                 <div class="price">R$50,00 <span>R$80,00</span></div>
                 <a href="#" class="add-cart">Adicione ao carrinho</a>
             </div>
 
             <div class="box">
-                <img th:src="@{/pictures/camisas/camisaCarrinho6.png}" alt="item-5" class="product-img">
+                <img src="/pictures/camisas/camisaCarrinho6.png" alt="item-5" class="product-img">
                 <h3 class="product-title">Camisa Streewear SZA</h3>
                 <div class="price">R$50,00 <span>R$100,00</span></div>
                 <a href="#" class="add-cart">Adicione ao carrinho</a>
             </div>
 
             <div class="box">
-                <img th:src="@{/pictures/camisas/camisaCarrinho7.png}" alt="item-6" class="product-img">
+                <img src="/pictures/camisas/camisaCarrinho7.png" alt="item-6" class="product-img">
                 <h3 class="product-title">LOF1</h3>
                 <div class="price">R$100,00 <span>R$200,00</span></div>
                 <a href="#" class="add-cart">Adicione ao carrinho</a>
@@ -116,7 +116,7 @@
     </div>
 
     <!-- SCRIPTS -->
-    <script th:src="@{/scripts/loja.js}"></script>
-    <script th:src="@{/scripts/procura.js}"></script>
+    <script src="/scripts/loja.js"></script>
+    <script src="/scripts/procura.js"></script>
 </body>
 </html>

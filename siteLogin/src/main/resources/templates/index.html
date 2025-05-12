@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -10,26 +10,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link th:href="@{/pictures/logo.png}" rel="icon" type="image/x-icon">
+    <link href="/pictures/logo.png" rel="icon" type="image/x-icon">
     <title>HOME</title>
 </head>
 
 <body>
     <header class="header">
         <section>
-            <a th:href="@{/}" class="logo">
-                <img th:src="@{/pictures/logo.png}" width="130px" alt="logo">
+            <a href="/" class="logo">
+                <img src="/pictures/logo.png" width="130px" alt="logo">
             </a>
 
             <nav class="navbar">
-               	<a th:href="@{/}">HOME</a>
-                <a th:href="@{/loja}">SHOP ALL</a>
-                <a th:href="@{/sac}">SAC</a>
-                <a th:href="@{/sobre}">SOBRE</a>
+                <a href="/">HOME</a>
+                <a href="/loja">SHOP ALL</a>
+                <a href="/sac">SAC</a>
+                <a href="/sobre">SOBRE</a>
             </nav>
 
             <div class="icons">
-                <a th:href="@{/login}">
+                <a href="/login">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAY..." alt="usuário">
                 </a>
 
@@ -52,7 +52,7 @@
     <div class="home-container">
         <section id="home">
             <div class="container-image-model">
-                <img th:src="@{/pictures/modelo/WhatsApp Image 2025-03-19 at 20.12.41.jpeg}" width="798px" alt="">
+                <img src="/pictures/modelo/WhatsApp Image 2025-03-19 at 20.12.41.jpeg" width="798px" alt="">
             </div>
             <div class="content">
                 <h3>AS MELHORES ROUPAS STREETWEAR DO BRASIL</h3>
@@ -66,7 +66,7 @@
         <h2 class="title">SOBRE <span>NÓS</span></h2>
         <div class="row">
             <div class="container-image">
-                <img th:src="@{/pictures/image.png}" width="850px" alt="sobre-nos">
+                <img src="/pictures/image.png" width="850px" alt="sobre-nos">
             </div>
             <div class="content">
                 <h3>O QUE FAZ SERMOS ESPECIAL?</h3>
@@ -82,13 +82,12 @@
 
         <div class="box-container">
             <div class="box">
-                <img th:src="@{/pictures/camisas/camisaCarrinho5.png}" alt="camisa-1" class="product-img">
+                <img src="/pictures/camisas/camisaCarrinho5.png" alt="camisa-1" class="product-img">
                 <h3 class="product-title">Camisa Streewear Caveiras</h3>
                 <div class="price">R$180,00 <span>R$200,00</span></div>
                 <a href="#" class="add-cart">Adicione ao carrinho</a>
             </div>
 
-            <!-- Repita os blocos acima para os outros produtos, trocando o caminho da imagem com th:src -->
         </div>
     </section>
 
@@ -97,9 +96,9 @@
 
         <div class="box-container">
             <div class="box">
-                <img th:src="@{/pictures/quote-img.png}" alt="comentario">
+                <img src="/pictures/quote-img.png" alt="comentario">
                 <p>Lorem ipsum dolor sit amet...</p>
-                <img th:src="@{/pictures/veigh 1.jpg}" alt="foto-cliente" class="user">
+                <img src="/pictures/veigh 1.jpg" alt="foto-cliente" class="user">
                 <h3>Thiago Veigh</h3>
                 <div class="stars">
                     <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/star--v1.png" />
@@ -136,8 +135,8 @@
     </section>
 
     <!-- SCRIPTS -->
-    <script th:src="@{/scripts/loja.js}"></script>
-    <script th:src="@{/scripts/procura.js}"></script>
+    <script src="/scripts/loja.js"></script>
+    <script src="/scripts/procura.js"></script>
 
 </body>
 </html>

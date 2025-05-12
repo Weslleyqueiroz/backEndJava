@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
-    <link rel="icon" th:href="@{/pictures/logo.png}" type="image/x-icon">
+    <link rel="icon" href="/pictures/logo.png" type="image/x-icon">
     <title>SAC</title>
 </head>
 
@@ -21,19 +21,19 @@
 <!-- HEADER -->
 <header class="header">
     <section>
-        <a th:href="@{/}" class="logo">
-            <img th:src="@{/pictures/logo.png}" width="130px" alt="logo">
+        <a href="/" class="logo">
+            <img src="/pictures/logo.png" width="130px" alt="logo">
         </a>
 
         <nav class="navbar">
-           	<a th:href="@{/}">HOME</a>
-            <a th:href="@{/loja}">SHOP ALL</a>
-            <a th:href="@{/sac}">SAC</a>
-            <a th:href="@{/sobre}">SOBRE</a>
+            <a href="/">HOME</a>
+            <a href="/loja">SHOP ALL</a>
+            <a href="/sac">SAC</a>
+            <a href="/sobre">SOBRE</a>
         </nav>
 
         <div class="icons">
-            <a th:href="@{/login}">
+            <a href="/login">
                 <img src="data:image/png;base64,..." alt="user-icon" />
             </a>
             <a href="#" id="search-box">
@@ -88,11 +88,11 @@
 <div class="cart">
     <h2 class="cart-title">CARRINHO DE COMPRA</h2>
     <div class="cart-content">
-        <!-- Produtos dinamicamente inseridos via JS ou Thymeleaf -->
+        <!-- Produtos dinamicamente inseridos via JS -->
     </div>
     <div class="total">
         <div class="total-title">Total</div>
-        <div class="total-price" th:text="${valorTotal != null ? 'R$' + valorTotal : 'R$0,00'}">R$200,00</div>
+        <div class="total-price">R$200,00</div>
     </div>
     <button type="button" class="btn-buy">Compre agora</button>
     <i class='bx bx-x' id="close-cart"></i>
@@ -117,8 +117,8 @@
 </section>
 
 <!-- SCRIPTS -->
-<script th:src="@{/scripts/loja.js}"></script>
-<script th:src="@{/scripts/procura.js}"></script>
+<script src="/scripts/loja.js"></script>
+<script src="/scripts/procura.js"></script>
 
 </body>
 </html>

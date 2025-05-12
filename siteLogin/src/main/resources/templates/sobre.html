@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8"/>
@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
-    <link rel="icon" th:href="@{/pictures/logo.png}" type="image/x-icon"/>
+    <link rel="icon" href="/pictures/logo.png" type="image/x-icon"/>
     <title>SOBRE</title>
 </head>
 
@@ -19,19 +19,19 @@
     <!-- NAV BAR -->
     <header class="header">
         <section>
-            <a th:href="@{/}" class="logo">
-                <img th:src="@{/pictures/logo.png}" width="130px" alt="logo"/>
+            <a href="/" class="logo">
+                <img src="/pictures/logo.png" width="130px" alt="logo"/>
             </a>
 
             <nav class="navbar">
-                <a th:href="@{/}">HOME</a>
-                <a th:href="@{/loja}">SHOP ALL</a>
-                <a th:href="@{/sac}">SAC</a>
-                <a th:href="@{/sobre}">SOBRE</a>
+                <a href="/">HOME</a>
+                <a href="/loja">SHOP ALL</a>
+                <a href="/sac">SAC</a>
+                <a href="/sobre">SOBRE</a>
             </nav>
 
             <div class="icons">
-                <a th:href="@{/login}">
+                <a href="/login">
                     <img src="data:image/png;base64,iVBOR..." alt="user-male-circle--v1">
                 </a>
                 <a href="#" id="search-box">
@@ -98,8 +98,8 @@
         </div>
     </section>
 
-    <script th:src="@{/scripts/loja.js}"></script>
-    <script th:src="@{/scripts/procura.js}"></script>
+    <script src="/scripts/loja.js"></script>
+    <script src="/scripts/procura.js"></script>
 </body>
 
 </html>
