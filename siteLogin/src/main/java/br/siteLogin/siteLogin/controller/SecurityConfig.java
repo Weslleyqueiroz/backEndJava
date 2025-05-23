@@ -27,12 +27,13 @@ public class SecurityConfig {
         http
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/styles/**", "/scripts/**", "/pictures/**").permitAll()
-                .requestMatchers("/","/loja","/sac", "/sobre", "/login", "/formulario").permitAll()
+                .requestMatchers("/admin/**").hasRole("ADMIN")
+                .requestMatchers("/","/loja","/sac", "/sobre", "/login", "/formulario", "/cadastrar").permitAll()
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form
                 .loginPage("/login")
-                .defaultSuccessUrl("/") 
+                .defaultSuccessUrl("/home" , true) 
                 .permitAll()
             )
             .logout(logout -> logout
