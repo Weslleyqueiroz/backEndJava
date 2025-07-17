@@ -11,7 +11,7 @@ CSS: Para estilizar a interface do usuário.
 JavaScript: Para elementos interativos no frontend.
 
 ## 📂 Estrutura do Projeto
-O repositório contém uma pasta siteLogin, o que sugere um módulo dedicado ao tratamento de autenticação de usuários e processos de login.
+O repositório contém uma pasta siteLogin onde pratiquei a estrutura MVC no qual vi no 3 semestre da minha faculdade, onde contém controllers, model, repository, service e o autenticator o que sugere um módulo dedicado ao tratamento de autenticação de usuários e processos de login.
 
 ## 💻 Como Rodar (Instruções em Breve!)
 Atualmente, instruções detalhadas sobre como configurar e rodar este projeto localmente não estão disponíveis.
