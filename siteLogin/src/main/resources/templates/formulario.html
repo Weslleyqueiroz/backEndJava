@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Ajuste no caminho dos arquivos CSS -->
     <link rel="stylesheet" href="/styles/formulario.css">
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="icon" href="/pictures/logo.png" type="image/x-icon">
@@ -13,88 +12,84 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="form-image">
-            <!-- Imagem do formulário -->
-            <img src="/pictures/undraw_building-a-website_1wrp.svg" alt="Imagem de construção do site">
-        </div>
-        <div class="form">
-            <!-- Formulário de cadastro -->
-            <form action="/formulario" method="post">
-                <div class="form-header">
-                    <div class="title">
-                        <h1>Cadastre-se</h1>
-                    </div>
-                    <div class="login-button">
-                        <!-- Botão para página de login -->
-                        <a href="/login">Entrar</a>
-                    </div>
-                </div>
-
-                <!-- Grupo de inputs -->
-                <div class="input-group">
-                    <div class="input-box">
-                        <label for="firstname">Primeiro Nome</label>
-                        <input id="firstname" type="text" name="nome" placeholder="Digite seu primeiro nome" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="lastname">Sobrenome</label>
-                        <input id="lastname" type="text" name="sobrenome" placeholder="Digite seu sobrenome" required>
-                    </div>
-                    <div class="input-box">
-                        <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="numero">Celular</label>
-                        <input id="numero" type="tel" name="numero" placeholder="(xx) xxxx-xxxx">
-                    </div>
-
-                    <div class="input-box">
-                        <label for="senha">Senha</label>
-                        <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
-                    </div>
-                </div>
-
-                <!-- Seleção de gênero -->
-                <div class="gender-inputs">
-                    <div class="gender-title">
-                        <h6>Gênero</h6>
-                    </div>
-
-                    <div class="gender-group">
-                        <div class="gender-input">
-                            <input id="female" type="radio" name="gender" value="Feminino">
-                            <label for="female">Feminino</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="male" type="radio" name="gender" value="Masculino">
-                            <label for="male">Masculino</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="others" type="radio" name="gender" value="Outros">
-                            <label for="others">Outros</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="none" type="radio" name="gender" value="Prefiro não dizer">
-                            <label for="none">Prefiro não dizer</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Botão de continuar -->
-                <div class="continue-button">
-                    <button type="submit" id="continueButton">Continuar</button>
-                </div>
-            </form>
-        </div>
+<div class="container">
+    <div class="form-image">
+        <img src="/pictures/undraw_building-a-website_1wrp.svg" alt="Imagem de construção do site">
     </div>
-    <script src="/scripts/formulario.js"></script>
+    <div class="form">
+        <form id="cadastroForm">
+            <div class="form-header">
+                <div class="title">
+                    <h1>Cadastre-se</h1>
+                </div>
+                <div class="login-button">
+                    <a href="/login">Entrar</a>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="firstname">Primeiro Nome</label>
+                    <input id="firstname" type="text" name="nome" placeholder="Digite seu primeiro nome" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="lastname">Sobrenome</label>
+                    <input id="lastname" type="text" name="sobrenome" placeholder="Digite seu sobrenome" required>
+                </div>
+                <div class="input-box">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="numero">Celular</label>
+                    <input id="numero" type="tel" name="numero" placeholder="(xx) xxxx-xxxx">
+                </div>
+
+                <div class="input-box">
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
+                </div>
+            </div>
+
+            <div class="gender-inputs">
+                <div class="gender-title">
+                    <h6>Gênero</h6>
+                </div>
+
+                <div class="gender-group">
+                    <div class="gender-input">
+                        <input id="female" type="radio" name="gender" value="Feminino">
+                        <label for="female">Feminino</label>
+                    </div>
+
+                    <div class="gender-input">
+                        <input id="male" type="radio" name="gender" value="Masculino">
+                        <label for="male">Masculino</label>
+                    </div>
+
+                    <div class="gender-input">
+                        <input id="others" type="radio" name="gender" value="Outros">
+                        <label for="others">Outros</label>
+                    </div>
+
+                    <div class="gender-input">
+                        <input id="none" type="radio" name="gender" value="Prefiro não dizer">
+                        <label for="none">Prefiro não dizer</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="continue-button">
+                <button type="submit" id="continueButton">Continuar</button>
+            </div>
+            <p id="mensagemErro" style="color: red; margin-top: 10px;"></p>
+            <p id="mensagemSucesso" style="color: green; margin-top: 10px;"></p>
+        </form>
+    </div>
+</div>
+<script src="/scripts/formulario.js"></script>
 </body>
 
 </html>

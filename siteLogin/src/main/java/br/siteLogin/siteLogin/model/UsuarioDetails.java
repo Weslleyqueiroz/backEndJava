@@ -1,58 +1,32 @@
 package br.siteLogin.siteLogin.model;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
 import br.siteLogin.siteLogin.model.Usuario;
+import br.siteLogin.siteLogin.repository.UsuarioRepository;
 
-import java.util.Collection;
-import java.util.Collections;
+@Service // <<--- Garanta que esta anotação está presente
+public class UsuarioDetails implements UserDetailsService {
 
-public class UsuarioDetails implements UserDetails {
+    private final UsuarioRepository usuarioRepository;
 
-    private final Usuario usuario;
-
-    public UsuarioDetails(Usuario usuario) {
-        this.usuario = usuario;
+    public UsuarioDetails(UsuarioRepository usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
     }
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-      
-        return Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + usuario.getRole()));
-    }
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        Usuario usuario = usuarioRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado com o email: " + email));
 
-    @Override
-    public String getPassword() {
-        return usuario.getSenha();  
-    }
-
-    @Override
-    public String getUsername() {
-        return usuario.getEmail();  
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;  
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;  
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true; 
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;  
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
+        // Retorna um objeto UserDetails do Spring Security
+        return org.springframework.security.core.userdetails.User.builder()
+                .username(usuario.getEmail())
+                .password(usuario.getSenha()) // A senha já deve estar encodificada no banco de dados
+                .roles(usuario.getRole()) // "USER", "ADMIN", etc.
+                .build();
     }
 }

@@ -1,21 +1,22 @@
-package br.siteLogin.siteLogin.controller;
-
-import java.util.Map;
+package br.siteLogin.siteLogin.controller; // Pode deixar aqui por enquanto, mas considere mover para 'config'
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestController; // <<== AQUI!
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import br.siteLogin.siteLogin.model.Usuario;
 import br.siteLogin.siteLogin.repository.UsuarioRepository;
-import jakarta.validation.Valid;
 
-@RestController
-@RequestMapping("/cadastrar")
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController // <<== AQUI! Certifique-se de que é @RestController, NÃO @Controller
+@CrossOrigin(origins = "http://localhost:8081") // Ajuste a porta se o frontend estiver em outra
 public class CadastrarController {
 
     @Autowired
@@ -24,32 +25,21 @@ public class CadastrarController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @PostMapping
-    public ResponseEntity<?> cadastrarUsuario(@RequestBody @Valid UsuarioDTO usuarioDTO) {
-        
-        if (usuarioRepository.findByEmail(usuarioDTO.getEmail()).isPresent()) {
-            return ResponseEntity
-                .badRequest()
-                .body(Map.of("success", false, "message", "Email já cadastrado"));
+    @PostMapping("/cadastrar")
+    public ResponseEntity<Map<String, String>> cadastrarUsuario(@RequestBody Usuario usuario) { // <<== AQUI! @RequestBody e ResponseEntity
+        Map<String, String> response = new HashMap<>();
+
+        if (usuarioRepository.findByEmail(usuario.getEmail()).isPresent()) {
+            response.put("message", "Email já cadastrado!");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
         }
 
-        
-        Usuario novoUsuario = new Usuario();
-        novoUsuario.setNome(usuarioDTO.getNome());
-        novoUsuario.setSobrenome(usuarioDTO.getSobrenome());
-        novoUsuario.setEmail(usuarioDTO.getEmail());
-        novoUsuario.setNumero(usuarioDTO.getNumero());
-        novoUsuario.setSenha(passwordEncoder.encode(usuarioDTO.getSenha()));
-        novoUsuario.setGender(usuarioDTO.getGender());
-        novoUsuario.setRole("USER"); 
+        usuario.setSenha(passwordEncoder.encode(usuario.getSenha()));
+        usuario.setRole("USER");
 
- 
-        usuarioRepository.save(novoUsuario);
+        usuarioRepository.save(usuario);
 
-
-        return ResponseEntity.ok(Map.of(
-            "success", true,
-            "message", "Usuário cadastrado com sucesso"
-        ));
+        response.put("message", "Usuário cadastrado com sucesso!");
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }
